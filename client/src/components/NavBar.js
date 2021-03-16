@@ -17,6 +17,11 @@ const NavBar = () => {
           About
         </Menu.Item>
       </Link>
+      <Link to='/componentDemo'>
+        <Menu.Item active={pathname == '/componentDemo'}>
+          Component Demo
+        </Menu.Item>
+      </Link>
     </Menu>
   )
 }
