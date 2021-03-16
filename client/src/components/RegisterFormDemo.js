@@ -12,38 +12,38 @@ function RegisterFormDemo() {
   const onSubmit = (data) => {
     alert("submitted");
     console.log(data);
-  }; // your form submit function which will invoke after successful validation
+  };
 
-  const getPassPhraseError = () => {
-    if (errors.passphrase.type === "required") {
-      return "required field";
-    } else if (errors.passphrase.type === "validate") {
-      return "needs to be four words, each min 3 chars";
+  const getPasswordError = () => {
+    if (errors.password.type === "required") {
+      return "a password is required";
     } else {
       return "Failed";
     }
   };
 
-  console.log(watch("example")); // you can watch individual input by pass the name of the input
+  console.log(watch("example"));
   console.log(errors);
 
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <h1>Register</h1>
-      <FormLabel>UserName</FormLabel>
-      <input name="userName" defaultValue="test" ref={register} />
-      <FormLabel>PassPhrase</FormLabel>
+      <FormLabel>Username</FormLabel>
+      <input name="username" placeholder="username" ref={register} />
+      <FormLabel>Password</FormLabel>
+      <p>minimum of 8 characters -- must include at least one letter and one number</p>
       <input
-        name="passphrase"
+        // type='password'
+        pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+        name="password"
+        placeholder='password'
         ref={register({
           required: true,
-          validate: (val) =>
-            val.split(" ").filter((word) => word.length >= 3).length >= 4
         })}
       />
-      {errors.passphrase && (
-        <FormattedMessage noBackground type='alert'>{getPassPhraseError()}</FormattedMessage>
+      {errors.password && (
+        <FormattedMessage noBackground type='alert'>{getPasswordError()}</FormattedMessage>
       )}
 
       <Button primary type="submit">

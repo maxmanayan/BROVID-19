@@ -1,6 +1,6 @@
 // can change these whenever
 
-export const PRIMARY_COLOR = 'steelblue';
+export const PRIMARY_COLOR = '#3CB371';
 
 export const INV_PRIMARY_COLOR = 'white';
 
@@ -26,7 +26,7 @@ export const ALERT_TEXT_COLOR = 'red'
 
 export const WARN_BACKGROUND = 'yellow'
 
-export const WARN_TEXT_COLOR = 'orange'
+export const WARN_TEXT_COLOR = 'tomato'
 
 
 export const NOTIFY_BACKGROUND = 'lightblue'
