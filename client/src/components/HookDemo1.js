@@ -11,9 +11,6 @@ const HookDemo1 = (props)=> {
     return data.map(d => <pre>{JSON.stringify(d, null, 1)}</pre>)
  }
 
-  // if(loading) return <FormattedMessage >Loading...</FormattedMessage>
-  // if(error) return <ErrorMessage fullError error={error}/>
-  // if(error) return <FormattedMessage type='alert'>Error occurred</FormattedMessage>
   return (
     <AxiosContainer loading={loading} error={error}>
       <h1>Hook Demo 1</h1>

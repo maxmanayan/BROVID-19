@@ -19,7 +19,7 @@ const ComponentDemo = () => {
       <BodyContainer>
         <h1>My Components</h1>
         <Card header='Loading Data Demo'>
-          {/* <HookDemo2 /> */}
+          <HookDemo2 />
           {/* <HookDemo1 /> */}
           <HookDemo />
           {/* <LoadDataDemo /> */}
@@ -28,7 +28,7 @@ const ComponentDemo = () => {
         <Card header='Default Loader'>
           <Loader/>
         </Card>
-        
+
         <Card header='Buttons'>
           <Button primary>Primary Button</Button>
           <Button>Inverted Button</Button>

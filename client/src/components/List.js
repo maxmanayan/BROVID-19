@@ -1,5 +1,5 @@
 const List = (props) => {
-  const { children, name, data, renderData } = props
+  const { name, data, renderData } = props
 
   return(
     <>
