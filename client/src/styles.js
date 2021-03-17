@@ -29,6 +29,6 @@ export const WARN_BACKGROUND = 'yellow'
 export const WARN_TEXT_COLOR = 'tomato'
 
 
-export const NOTIFY_BACKGROUND = 'lightblue'
+export const NOTIFY_BACKGROUND = 'lightgreen'
 
-export const NOTIFY_TEXT_COLOR = 'blue'
+export const NOTIFY_TEXT_COLOR = 'green'
