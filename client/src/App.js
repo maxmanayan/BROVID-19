@@ -6,6 +6,7 @@ import NavBar from './components/NavBar';
 import { Container } from 'semantic-ui-react';
 import About from './pages/About';
 import ComponentDemo from './pages/ComponentDemo';
+import Footer from './components/Footer';
 
 function App() {
   return (

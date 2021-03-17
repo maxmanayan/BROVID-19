@@ -1,7 +1,8 @@
 import React from 'react';
+import BodyContainer from '../components/BodyContainer';
 import Button from '../components/Button';
 import CardContainer from '../components/CardContainer';
-import Form from '../components/Form';
+import Footer from '../components/Footer';
 import FormattedMessage from '../components/FormattedMessage';
 import RegisterFormDemo from '../components/RegisterFormDemo';
 
@@ -9,6 +10,7 @@ import RegisterFormDemo from '../components/RegisterFormDemo';
 const ComponentDemo = () => {
   return(
     <>
+      <BodyContainer>
       <h1>My Components</h1>
       <Button primary>Primary Button</Button>
       <Button>Inverted Button</Button>
@@ -32,6 +34,10 @@ const ComponentDemo = () => {
           Notify
         </FormattedMessage>
       </CardContainer>
+      </BodyContainer>
+      <Footer>
+        Footer
+      </Footer>
     </>
   )
 }
