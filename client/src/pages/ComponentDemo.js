@@ -6,6 +6,8 @@ import CardContainer from '../components/CardContainer';
 import Footer from '../components/Footer';
 import FormattedMessage from '../components/FormattedMessage';
 import HookDemo from '../components/HookDemo';
+import HookDemo1 from '../components/HookDemo1';
+import HookDemo2 from '../components/HookDemo2';
 import LoadDataDemo from '../components/LoadDataDemo';
 import RegisterFormDemo from '../components/RegisterFormDemo';
 
@@ -16,7 +18,9 @@ const ComponentDemo = () => {
       <BodyContainer>
         <h1>My Components</h1>
         <Card header='Loading Data Demo'>
-          <HookDemo />
+          <HookDemo2 />
+          {/* <HookDemo1 /> */}
+          {/* <HookDemo /> */}
           {/* <LoadDataDemo /> */}
         </Card>
         
