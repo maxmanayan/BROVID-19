@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { INV_PRIMARY_COLOR, PRIMARY_COLOR } from '../styles';
 
 
-//must make body position: relative
+//must use with BodyContainer.js
+
 
 const Footer = styled.footer`
   background: ${PRIMARY_COLOR};

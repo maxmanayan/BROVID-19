@@ -24,6 +24,7 @@ const ComponentDemo = () => {
         <RegisterFormDemo />  
       </CardContainer>
       <CardContainer>
+        <h1>Alerts</h1>
         <FormattedMessage type='alert'>
           Alert
         </FormattedMessage>

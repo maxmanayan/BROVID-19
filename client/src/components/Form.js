@@ -5,7 +5,7 @@ const Form = styled.form`
   display: flex; 
   flex-direction: column;
   justify-content: center;
-  margin: 1em;
+  margin: 3em;
 `
 
 
