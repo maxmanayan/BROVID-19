@@ -42,6 +42,8 @@ function RegisterFormDemo() {
           required: true,
         })}
       />
+
+      {/* <input onChange={(e)=> x(e.target.value)}/> */}
       {errors.password && (
         <FormattedMessage noBackground type='alert'>{getPasswordError()}</FormattedMessage>
       )}

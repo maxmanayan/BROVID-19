@@ -1,6 +1,7 @@
 import React from 'react';
 import BodyContainer from '../components/BodyContainer';
 import Button from '../components/Button';
+import Card from '../components/Card';
 import CardContainer from '../components/CardContainer';
 import Footer from '../components/Footer';
 import FormattedMessage from '../components/FormattedMessage';
@@ -12,8 +13,10 @@ const ComponentDemo = () => {
     <>
       <BodyContainer>
       <h1>My Components</h1>
-      <Button primary>Primary Button</Button>
-      <Button>Inverted Button</Button>
+      <Card header='Buttons'>
+        <Button primary>Primary Button</Button>
+        <Button>Inverted Button</Button>
+      </Card>
       <CardContainer>
         <h1>AYY</h1>
       </CardContainer>
@@ -23,8 +26,7 @@ const ComponentDemo = () => {
       <CardContainer>
         <RegisterFormDemo />  
       </CardContainer>
-      <CardContainer>
-        <h1>Alerts</h1>
+      <Card header='Alerts'>
         <FormattedMessage type='alert'>
           Alert
         </FormattedMessage>
@@ -34,7 +36,7 @@ const ComponentDemo = () => {
         <FormattedMessage>
           Notify
         </FormattedMessage>
-      </CardContainer>
+      </Card>
       </BodyContainer>
       <Footer>
         Footer
