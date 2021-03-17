@@ -9,6 +9,7 @@ import HookDemo from '../components/HookDemo';
 import HookDemo1 from '../components/HookDemo1';
 import HookDemo2 from '../components/HookDemo2';
 import LoadDataDemo from '../components/LoadDataDemo';
+import Loader from '../components/Loader';
 import RegisterFormDemo from '../components/RegisterFormDemo';
 
 
@@ -18,10 +19,14 @@ const ComponentDemo = () => {
       <BodyContainer>
         <h1>My Components</h1>
         <Card header='Loading Data Demo'>
-          <HookDemo2 />
+          {/* <HookDemo2 /> */}
           {/* <HookDemo1 /> */}
-          {/* <HookDemo /> */}
+          <HookDemo />
           {/* <LoadDataDemo /> */}
+        </Card>
+        
+        <Card header='Default Loader'>
+          <Loader/>
         </Card>
         
         <Card header='Buttons'>
