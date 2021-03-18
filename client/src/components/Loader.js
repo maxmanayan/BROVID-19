@@ -28,7 +28,7 @@ const Loader = ({text, type, color}) => {
     }
   }
 
-  let test = <BounceLoader loading color={PRIMARY_COLOR} size={30}/>
+  // let test = <BounceLoader loading color={PRIMARY_COLOR} size={30}/>
     return (
       <LoaderContainer style={color ? {color: color} : {color: PRIMARY_COLOR}}>
         {getLoaderType(type)}
