@@ -12,7 +12,7 @@ const BodyContainer = styled.body`
   width: 100%;
   height: auto;
 
-  background-color: aliceblue;
+  background-color: #D8BFD8;
 
   // how to make whole background a picture
 

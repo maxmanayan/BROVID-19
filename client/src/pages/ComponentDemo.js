@@ -25,8 +25,25 @@ const ComponentDemo = () => {
           {/* <LoadDataDemo /> */}
         </Card>
         
-        <Card header='Default Loader'>
+        <Card header='Loader Examples'>
+          <h4>Default Loader</h4>
           <Loader/>
+          <h4>Type = Beat</h4>
+          <Loader text={'example text'} type={'beat'}/>
+          <h4>Type = Square</h4>
+          <Loader text={'example text'} type={'square'}/>
+          <h4>Type = Ring</h4>
+          <Loader text={'example text'} type={'ring'}/>
+          <h4>Type = Clock</h4>
+          <Loader text={'example text'} type={'clock'}/>
+          <h4>Type = Circle</h4>
+          <Loader text={'example text'} type={'circle'}/>
+          <h4>Type = Hash</h4>
+          <Loader text={'example text'} type={'hash'}/>
+          <h4>Type = Moon</h4>
+          <Loader text={'example text'} type={'moon'}/>
+          <h4>Type = Bounce</h4>
+          <Loader text={'example text'} type={'bounce'}/>
         </Card>
 
         <Card header='Buttons'>

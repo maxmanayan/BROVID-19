@@ -1,5 +1,5 @@
 import React from 'react'
-import {BeatLoader, SquareLoader, RingLoader, BarLoader, ClockLoader, CircleLoader, HashLoader} from 'react-spinners'
+import {BeatLoader, SquareLoader, RingLoader, BarLoader, ClockLoader, CircleLoader, HashLoader, MoonLoader, BounceLoader} from 'react-spinners'
 import { PRIMARY_COLOR } from '../styles'
 import LoaderContainer from './LoaderContainer'
 
@@ -19,12 +19,16 @@ const Loader = ({text, type, color}) => {
       return <CircleLoader loading color={color ? color : PRIMARY_COLOR} size={30} />
     } else if (type == 'hash'){
       return <HashLoader loading color={color ? color : PRIMARY_COLOR} size={30} />
+    } else if (type == 'moon'){
+      return <MoonLoader loading color={color ? color : PRIMARY_COLOR} size={30} />
+    } else if (type == 'bounce'){
+      return <BounceLoader loading color={color ? color : PRIMARY_COLOR} size={30} />
     } else {
       return <BarLoader loading color={color ? color : PRIMARY_COLOR}/>
     }
   }
 
-  let test = <HashLoader loading color={PRIMARY_COLOR} size={30}/>
+  let test = <BounceLoader loading color={PRIMARY_COLOR} size={30}/>
     return (
       <LoaderContainer style={color ? {color: color} : {color: PRIMARY_COLOR}}>
         {getLoaderType(type)}

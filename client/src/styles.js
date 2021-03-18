@@ -1,6 +1,6 @@
 // can change these whenever
 
-export const PRIMARY_COLOR = '#3CB371';
+export const PRIMARY_COLOR = '#DDA0DD';
 
 export const INV_PRIMARY_COLOR = 'white';
 
