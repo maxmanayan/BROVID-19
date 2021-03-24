@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useHistory, useLocation, withRouter } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react'
 import { AuthContext } from '../providers/AuthProvider';
 
@@ -90,4 +90,4 @@ const NavBar = (props) => {
 //     </AuthConsumer>
 //   )
 // }
-export default NavBar;
+export default withRouter(NavBar);
