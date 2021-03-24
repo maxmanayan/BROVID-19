@@ -36,9 +36,9 @@ const Home = () => {
       <Header as='h1' textAlign='center'>Devise Auth App</Header>
       {user && 
       
-      <Card header={`Welcome ${user.firstName}!`}>
+      <Card header={`Welcome ${user.name}!`}>
         <h2>Your Info:</h2>
-        <p>Full Name: {user.firstName} {user.lastName}</p>
+        <p>Name: {user.name}</p>
         <p>Email: {user.email}</p>
       </Card>
       }

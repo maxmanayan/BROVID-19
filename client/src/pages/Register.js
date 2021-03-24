@@ -8,8 +8,7 @@ const Register = () => {
   const {handleRegister} = useContext(AuthContext)
   const history = useHistory()
   const [account, setAccount] = useState({
-    firstName: 'Test',
-    lastName: 'LastName',
+    name: 'Test',
     email: 'test1@test.com',
     password: '123456',
     passwordConfirmation: '123456'
@@ -38,20 +37,20 @@ const Register = () => {
       <Form.Input 
       autoFocus
       required
-      label='First Name'
-      placeholder='First Name'
-      name='firstName'
-      value={account.firstName}
+      label='Name'
+      placeholder='Name'
+      name='name'
+      value={account.name}
       onChange={handleChange}
       />
-      <Form.Input 
+      {/* <Form.Input 
       required
       label='Last Name'
       placeholder='Last Name'
       name='lastName'
       value={account.lastName}
       onChange={handleChange}
-      />
+      /> */}
       <Form.Input 
       required
       label='Email'

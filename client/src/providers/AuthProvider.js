@@ -11,23 +11,39 @@ const AuthProvider = (props) => {
   console.log(user)
 
   const handleRegister = async (user, history) => {
+    console.log(user)
     try {
-      console.log(user)
+      // console.log(user)
       let res = await axios.post('/api/auth', user)
+      console.log(res)
       let parsedData = JSON.parse(res.config.data)
-      console.log(`user: ${parsedData}`)
+      // console.log(`user: ${parsedData}`)
       setUser({user: parsedData})
       history.push('/')
     } catch (err) {
       console.log(err)
     }
   }
+
+  // const handleRegister = async (user, history) => {
+  //   axios.post('/api/auth', user).then(res=>{
+  //     console.log(res)
+  //   }).catch(err=>{
+  //     console.log(err)
+  //   })
+  // }
   
   const handleLogin = (user, history) => {
 
   }
-  const handleLogout = (history) => {
-
+  const handleLogout = async (history) => {
+    try {
+      let res = await axios.delete('/api/auth/sign_out')
+      setUser({user: null})
+      history.push('/login')
+    } catch (err) {
+      console.log(err)
+    }
   }
 
   return (
