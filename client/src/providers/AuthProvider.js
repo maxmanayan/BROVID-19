@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 
 
-const AuthContext = React.createContext()
+export const AuthContext = React.createContext()
 
 export const AuthConsumer = AuthContext.Consumer
 

@@ -1,10 +1,42 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react'
+import { AuthContext } from '../providers/AuthProvider';
 
 
-const NavBar = () => {
+const NavBar = (props) => {
   const { pathname } = useLocation()
+  const history = useHistory()
+  const {user, handleLogout} = useContext(AuthContext)
+
+  const getRightMenu = () => {
+
+    if(user) {
+      return(
+        <Menu.Menu position='right'>
+          <Menu.Item onClick={()=>handleLogout(history)}>
+            Logout
+          </Menu.Item>
+        </Menu.Menu>
+      )
+    } else {
+      return(
+        <Menu.Menu position='right'>
+          <Link to='/login'>
+            <Menu.Item active={pathname == '/login'}>
+              Login
+            </Menu.Item>
+          </Link>
+          <Link to='/register'>
+            <Menu.Item active={pathname == '/register'}>
+              Register
+            </Menu.Item>
+          </Link>
+        </Menu.Menu>
+      )
+    }
+  }
+
   return(
     <Menu>
       <Link to='/'>
@@ -22,6 +54,7 @@ const NavBar = () => {
           Component Demo
         </Menu.Item>
       </Link>
+      {getRightMenu()}
     </Menu>
   )
 }
@@ -48,5 +81,13 @@ const NavBar = () => {
 //   }
 // }
 
-
+// export const ConnectedNavBar = (props) => {
+//   return(
+//     <AuthConsumer>
+//       { (value) => (
+//         <NavBar {...props} auth={value}/>
+//       )}
+//     </AuthConsumer>
+//   )
+// }
 export default NavBar;
