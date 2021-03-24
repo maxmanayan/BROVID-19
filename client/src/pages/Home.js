@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Header } from 'semantic-ui-react';
 
 
 // functional component -- just a JS function
@@ -26,6 +27,7 @@ const Home = () => {
   return(
     <div>
       <h1>Home</h1>
+      <Header as='h1' textAlign='center'>Devise Auth App</Header>
       {testData && testData}
     </div>
   )
