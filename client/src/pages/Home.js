@@ -1,12 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { Header } from 'semantic-ui-react';
+import { AuthContext } from '../providers/AuthProvider';
+import Card from '../components/Card';
+import Loader from '../components/Loader';
 
 
 // functional component -- just a JS function
 const Home = () => {
   const [testData, setTestData] = useState(null)
   const [loading, setLoading] = useState(true)
+
+  const {user} = useContext(AuthContext)
 
   useEffect(()=>{
     getData()
@@ -23,12 +28,20 @@ const Home = () => {
     }
   }
 
-  if(loading) return <p>Loading</p>
+  if(loading) return <Loader type='clock' text='loading please wait'/>
   return(
     <div>
-      <h1>Home</h1>
+      {/* <h1>Home</h1> */}
+      {/* {testData && testData} */}
       <Header as='h1' textAlign='center'>Devise Auth App</Header>
-      {testData && testData}
+      {user && 
+      
+      <Card header={`Welcome ${user.firstName}!`}>
+        <h2>Your Info:</h2>
+        <p>Full Name: {user.firstName} {user.lastName}</p>
+        <p>Email: {user.email}</p>
+      </Card>
+      }
     </div>
   )
 }
