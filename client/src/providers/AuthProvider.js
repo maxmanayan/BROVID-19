@@ -13,19 +13,18 @@ const AuthProvider = (props) => {
   const handleRegister = async (user, history) => {
     console.log(user)
     try {
-      // console.log(user)
       let res = await axios.post('/api/auth', user)
       console.log(res)
-      let parsedData = JSON.parse(res.config.data)
-      // console.log(`user: ${parsedData}`)
-      setUser({user: parsedData})
+      // let parsedData = JSON.parse(res.config.data)
+      // setUser({user: parsedData})
+      setUser({user: res.data.data})
       history.push('/')
     } catch (err) {
       console.log(err)
     }
   }
 
-  // const handleRegister = async (user, history) => {
+  // const handleRegister =  (user, history) => {
   //   axios.post('/api/auth', user).then(res=>{
   //     console.log(res)
   //   }).catch(err=>{
@@ -38,13 +37,27 @@ const AuthProvider = (props) => {
   }
   const handleLogout = async (history) => {
     try {
-      let res = await axios.delete('/api/auth/sign_out')
+      console.log('in handleLogout')
+      let res = await axios.delete("/api/auth/sign_out")
+      console.log(res)
       setUser({user: null})
       history.push('/login')
     } catch (err) {
       console.log(err)
     }
   }
+
+  // const handleLogout = (history) => {
+  //   axios.delete("/api/auth/sign_out")
+  //     .then( res => {
+  //       this.setState({ user: null, });
+  //       history.push('/login');
+  //     })
+  //     .catch( res => {
+  //       console.log(res);
+  //     })
+  // }
+
 
   return (
     <AuthContext.Provider value={{
