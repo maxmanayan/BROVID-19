@@ -18,7 +18,6 @@ const Register = () => {
     e.preventDefault()
     if(account.password === account.passwordConfirmation) {
       handleRegister({...account}, history)
-      console.log('handleSubmit Complete')
     } else {
       alert('Passwords Must Match!')
     }
