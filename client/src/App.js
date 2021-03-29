@@ -11,7 +11,7 @@ import Login from './pages/Login';
 
 function App() {
   return (
-    <>
+    <div className='demo'>
       <NavBar/>
       <Container>
         <Switch>
@@ -23,7 +23,7 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
       </Container>
-    </>
+      </div>
   );
 }
 
