@@ -54,6 +54,11 @@ const NavBar = (props) => {
           Colleges
         </Menu.Item>
       </Link>
+      <Link to='/Frats'>
+        <Menu.Item active={pathname == '/Frats'}>
+          Frats
+        </Menu.Item>
+      </Link>
       {/* <Link to='/componentDemo'>
         <Menu.Item active={pathname == '/componentDemo'}>
           Component Demo
