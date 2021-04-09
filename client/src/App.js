@@ -10,6 +10,8 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import FetchUser from './components/FetchUser';
 import Colleges from './components/College/Colleges';
+import FormattedMessage from './components/FormattedMessage';
+import Frats from './components/Frats/Frats';
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route exact path='/' component={Home} />
           <Route exact path='/about' component={About} />
           <Route exact path='/Colleges' component={Colleges} />
+          <Route exact path='/Frats' component={Frats} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/componentDemo' component={ComponentDemo} />
