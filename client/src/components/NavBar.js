@@ -59,6 +59,11 @@ const NavBar = (props) => {
           Frats
         </Menu.Item>
       </Link>
+      <Link to='/Parties'>
+        <Menu.Item active={pathname == '/Parties'}>
+          Parties!
+        </Menu.Item>
+      </Link>
       {/* <Link to='/componentDemo'>
         <Menu.Item active={pathname == '/componentDemo'}>
           Component Demo
