@@ -27,13 +27,13 @@ const Parties = () => {
         <Card className="text-center" style={{marginTop: '2em'}}>
           <Card.Header>{party.frat.name}</Card.Header>
           <Card.Body>
-            <Card.Title>{party.name}</Card.Title>
+            <Card.Title>Theme: {party.name}</Card.Title>
             <Card.Text>
-            {party.info}
+            Info: {party.info}
             </Card.Text>
             <Button variant="primary">Edit Party</Button>
           </Card.Body>
-          <Card.Footer className="text-muted">{party.date}</Card.Footer>
+          <Card.Footer className="text-muted">{party.date} (at the house)</Card.Footer>
         </Card>
       )
     })
