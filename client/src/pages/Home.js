@@ -4,6 +4,7 @@ import { Header } from 'semantic-ui-react';
 import { AuthContext } from '../providers/AuthProvider';
 import Card from '../components/Card';
 import Loader from '../components/Loader';
+import { Button } from 'react-bootstrap'
 
 
 // functional component -- just a JS function
@@ -42,6 +43,7 @@ const Home = () => {
         <p>Email: {user.email}</p>
       </Card>
       }
+      <Button>Primary</Button>
     </div>
   )
 }
