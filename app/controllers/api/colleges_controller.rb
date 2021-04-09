@@ -7,7 +7,7 @@ class Api::CollegesController < ApplicationController
   end
 
   def show
-    render json: {college: @college, patients: @college.get_patients_with_appointment_info, unassociated_patients: @college.get_unassociated_patients}
+    render json: {college: @college, frats: @college.get_frats_with_event_info, unassociated_frats: @college.get_unassociated_frats}
   end
 
   def create
