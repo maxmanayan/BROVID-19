@@ -2,8 +2,8 @@ class Api::EventsController < ApplicationController
   before_action :get_event, only: [:show, :update, :destroy]
   
   def index
-    # events = Event.with_doctors_patients
-    render json: Event.with_doctors_patients
+    # events = Event.with_colleges_frats
+    render json: Event.with_colleges_frats
   end
 
 
