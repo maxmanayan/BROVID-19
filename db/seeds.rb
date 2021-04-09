@@ -5,3 +5,45 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+require 'faker'
+
+Frat.destoy_all
+College.destoy_all
+Event.destoy_all
+
+5.times do 
+  @college = College.create(
+    name: Faker::University.name,
+    mascot: Faker::Team.mascot
+  )
+end
+
+
+5.times do
+  @frat = Frat.create(
+    name: Faker::University.greek_organization,
+    fav_beer: Faker::Beer.brand,
+    member_count: Faker::Number.between(from: 30, to: 200)
+  )
+
+  5.times do |i|
+    Event.create(
+      name: Faker::Quote.singular_siegler,
+      info: Faker::Movies::BackToTheFuture.quote,
+      date: Faker::Date.forward(days: 30),
+      byob: Faker::Boolean.boolean,
+      likes: Faker::Number.between(from: 1, to: 500),
+      frat_id: @frat.id,
+      college_id: (i + 1)
+    )
+  end
+
+end
+
+
+
+puts "Seeded #{Frat.all.size} new Frats"
+puts "Seeded #{College.all.size} new Colleges"
+puts "Seeded #{Event.all.size} new Events"
