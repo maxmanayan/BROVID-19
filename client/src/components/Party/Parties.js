@@ -25,7 +25,7 @@ const Parties = () => {
     return parties.map( party => {
       return(
         <Card className="text-center" style={{marginTop: '2em'}}>
-          <Card.Header>{party.frat.name}</Card.Header>
+          <Card.Header>Party hosted by {party.frat.name}</Card.Header>
           <Card.Body>
             <Card.Title>Theme: {party.name}</Card.Title>
             <Card.Text>
