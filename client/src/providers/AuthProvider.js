@@ -7,7 +7,7 @@ export const AuthContext = React.createContext()
 export const AuthConsumer = AuthContext.Consumer
 
 const AuthProvider = (props) => {
-  const [user, setUser] = useState({user: null})
+  const [user, setUser] = useState(null)
   // console.log(user)
 
   const handleRegister = async (user, history) => {
@@ -66,9 +66,12 @@ const AuthProvider = (props) => {
   return (
     <AuthContext.Provider value={{
       ...user,
+      authenticated: user !== null,
       handleRegister: handleRegister,
       handleLogin: handleLogin,
-      handleLogout: handleLogout
+      handleLogout: handleLogout,
+      setUser: (user) => setUser(user),
+
     }}>
       {props.children}
     </AuthContext.Provider>
