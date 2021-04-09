@@ -30,8 +30,8 @@ end
 
   5.times do |i|
     Event.create(
-      name: Faker::Quote.singular_siegler,
-      info: Faker::Movies::BackToTheFuture.quote,
+      name: Faker::Music::Rush.album,
+      info: Faker::Quote.singular_siegler,
       date: Faker::Date.forward(days: 30),
       byob: Faker::Boolean.boolean,
       likes: Faker::Number.between(from: 1, to: 500),
