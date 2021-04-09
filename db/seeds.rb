@@ -9,9 +9,9 @@
 
 require 'faker'
 
-Frat.destoy_all
-College.destoy_all
-Event.destoy_all
+Frat.destroy_all
+College.destroy_all
+Event.destroy_all
 
 5.times do 
   @college = College.create(
