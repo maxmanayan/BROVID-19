@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import { Button, Card, Col, Container, Row } from 'react-bootstrap'
 
 const Colleges = () => {
   const [colleges, setColleges] = useState([])
@@ -11,14 +12,17 @@ const Colleges = () => {
   const getColleges = async() => {
     try{
       let res = await axios.get('/api/colleges')
+      setColleges(res.data)
+      console.log(res.data)
     } catch(err){
       alert('err in getColleges')
     }
-    return(
-      <>
-
-      </>
-    )
+    
+  }
+  const renderColleges = () => {
+    return Colleges.map( c => {
+      
+    }
   }
 
   return(
