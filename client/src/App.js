@@ -8,11 +8,13 @@ import ComponentDemo from './pages/ComponentDemo';
 import NoMatch from './components/NoMatch';
 import Register from './pages/Register';
 import Login from './pages/Login';
+import FetchUser from './components/FetchUser';
 
 function App() {
   return (
     <div className='demo'>
       <NavBar/>
+      <FetchUser>
       <Container>
         <Switch>
           <Route exact path='/' component={Home} />
@@ -23,6 +25,7 @@ function App() {
           <Route component={NoMatch} />
         </Switch>
       </Container>
+      </FetchUser>
       </div>
   );
 }
