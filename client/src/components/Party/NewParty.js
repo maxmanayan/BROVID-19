@@ -1,6 +1,6 @@
 import React from 'react'
-import form from 'react-bootstrap'
-import { Form } from 'semantic-ui-react'
+import {Form} from 'react-bootstrap'
+
 
 const NewParty = () => {
   return (
