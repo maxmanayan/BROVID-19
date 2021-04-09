@@ -49,11 +49,16 @@ const NavBar = (props) => {
           About
         </Menu.Item>
       </Link>
-      <Link to='/componentDemo'>
+      <Link to='/Colleges'>
+        <Menu.Item active={pathname == '/Colleges'}>
+          Colleges
+        </Menu.Item>
+      </Link>
+      {/* <Link to='/componentDemo'>
         <Menu.Item active={pathname == '/componentDemo'}>
           Component Demo
         </Menu.Item>
-      </Link>
+      </Link> */}
       {getRightMenu()}
     </Menu>
   )
