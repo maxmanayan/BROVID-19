@@ -22,6 +22,14 @@ const Parties = () => {
     }
   }
 
+  const deleteParty = async (id) => {
+    try {
+      let res = await axios.delete(`/api/events/${id}`)
+      window.location.reload()
+    } catch (err) {
+      console.log(err)
+    }
+  }
   const renderPartyCards = () => {
     return parties.map( party => {
       return(
@@ -37,7 +45,7 @@ const Parties = () => {
             </Link>
             
             <div style={{marginTop: '1em'}}>
-            <Button variant='secondary'>Trash Party</Button>
+            <Button onClick={() => deleteParty(party.id)}variant='secondary'>Trash Party</Button>
             </div>
           </Card.Body>
           <Card.Footer className="text-muted">{party.date} (at the house)</Card.Footer>
