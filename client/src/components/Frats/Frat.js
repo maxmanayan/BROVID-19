@@ -48,6 +48,14 @@ const Frat = () => {
 //       console.log(error)
 //     }
 //   }
+const deleteParty = async (id) => {
+  try {
+    let res = await axios.delete(`/api/events/frat/${id}`)
+    window.location.reload()
+  } catch (err) {
+    console.log(err)
+  }
+}
 
   const renderParties = () => {
     // debugger
@@ -65,12 +73,17 @@ const Frat = () => {
             Info: {party.info}
             </Card.Text>
             <Button variant="primary">Edit Party</Button>
+            <div style={{marginTop: '1em'}}>
+            <Button onClick={() => deleteParty(party.id)}variant='secondary'>Trash Party</Button>
+            </div>
           </Card.Body>
           <Card.Footer className="text-muted">{party.date} (at the house)</Card.Footer>
+          
         </Card>
       )
     })
   }
+  
 
   return (
     <div>
@@ -79,8 +92,8 @@ const Frat = () => {
             <h3>Money Bro</h3>
           </Col>
       </Container> 
-      {/* <h1>{frat.name}</h1>
-      <span>Bro count:{frat.member_count}</span> */}
+      <h1>{frat.name}</h1>
+      <span>Bro count:{frat.member_count}</span>
       {frat && renderParties()}
     </div>
   )
