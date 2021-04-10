@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import {Button, Col, Form, Row} from 'react-bootstrap'
 
 
@@ -15,12 +16,42 @@ const NewPartyThroughParties = () => {
   const [ collegeID, setCollegeID ] = useState(null)
   const [ likes, setLikes ] = useState(0)
 
+  useEffect(()=>{
+    getFrats()
+    getColleges()
+  },[])
 
+  const getFrats = async () => {
+   try {
+     let res = await axios.get('/api/frats')
+     console.log('frats', res.data)
+   } catch (error) {
+     console.log(error)
+   } 
+  }
+
+  const getColleges = async () => {
+    try {
+      let res = await axios.get('/api/colleges')
+      console.log('colleges', res.data)
+    } catch (error) {
+      console.log(error)
+    } 
+   }
+
+   const renderFratOptions = () => {
+     return frats.map( frat => {
+       console.log('rendering frats', frat.name)
+       return(
+         <option>{frat.name} {frat.id}</option>
+       )
+     })
+   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      console.log(name, date, info, byob, likes)
+      console.log(name, date, info, byob, likes, collegeID, fratID)
     } catch (error) {
       console.log(error)
     }
@@ -42,7 +73,7 @@ const NewPartyThroughParties = () => {
 
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>So Where You From Bro?</Form.Label>
-          <Form.Control as="select" placeholder="So where you from bro?">
+          <Form.Control as="select" placeholder="So where you from bro?" name='collegeID' value={collegeID} onChange={(e)=>setCollegeID(e.target.value)}>
             <option>University 1</option>
             <option>University 2</option>
             <option>University 3</option>
@@ -53,12 +84,9 @@ const NewPartyThroughParties = () => {
 
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>Who do you know here?</Form.Label>
-          <Form.Control as="select" placeholder="So where you from bro?">
-            <option>Frat 1</option>
-            <option>Frat 2</option>
-            <option>Frat 3</option>
-            <option>Frat 4</option>
-            <option>Frat 5</option>
+          <Form.Control as="select" placeholder="So where you from bro?" name='fratID' value={fratID} onChange={(e)=>setFratID(e.target.value)}>
+            {/* <option>Frat 1</option> */}
+           {/* {renderFratOptions()} */}
           </Form.Control>
         </Form.Group>
 
