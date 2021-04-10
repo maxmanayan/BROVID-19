@@ -32,7 +32,9 @@ const Parties = () => {
             <Card.Text>
             Info: {party.info}
             </Card.Text>
-            <Button variant="primary">Edit Party</Button>
+            <Link to='/EditPartyThroughParties'>
+              <Button variant="primary">Edit Party</Button>
+            </Link>
           </Card.Body>
           <Card.Footer className="text-muted">{party.date} (at the house)</Card.Footer>
         </Card>

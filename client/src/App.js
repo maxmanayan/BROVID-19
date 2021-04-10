@@ -17,6 +17,7 @@ import Parties from './components/Party/Parties';
 import ProtectedRoute from './components/ProtectedRoute';
 import Frat from './components/Frats/Frat';
 import NewPartyThroughParties from './components/Party/NewPartyThroughParties';
+import EditPartyThroughParties from './components/Party/EditPartyThroughParties';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route exact path='/login' component={Login} />
           <Route exact path='/componentDemo' component={ComponentDemo} />
           <Route exact path='/NewPartyThroughParties' component={NewPartyThroughParties} />
+          <Route exact path='/EditPartyThroughParties' component={EditPartyThroughParties} />
           <Route component={NoMatch} />
         </Switch>
       </Container>
