@@ -18,6 +18,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Frat from './components/Frats/Frat';
 import NewPartyThroughParties from './components/Party/NewPartyThroughParties';
 import CollegeShow from './components/College/CollegeShow';
+import EditPartyThroughParties from './components/Party/EditPartyThroughParties';
 
 function App() {
   return (
@@ -44,7 +45,7 @@ function App() {
           <Route exact path='/login' component={Login} />
           <Route exact path='/componentDemo' component={ComponentDemo} />
           <Route exact path='/NewPartyThroughParties' component={NewPartyThroughParties} />
-          <Route exact path='/EditPartyThroughParties/:id' component={EditPartyThroughParties} />
+          <Route exact path='/EditPartyThroughParties/:id/:name/:date/:info/:byob/:likes/:collegeName/:collegeID/:fratName/:fratID' component={EditPartyThroughParties} />
           <Route component={NoMatch} />
         </Switch>
       </Container>

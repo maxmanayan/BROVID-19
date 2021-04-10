@@ -2,23 +2,26 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {Button, Col, Dropdown, Form, Row} from 'react-bootstrap'
-import { useParams } from 'react-router'
+import { useHistory, useParams } from 'react-router'
+import { Link } from 'react-router-dom'
 
 
 const EditPartyThroughParties = () => {
-  const { id } = useParams()
+  const { id, name: defaultName, date: defaultDate, info: defaultInfo, byob: defaultBYOB, likes: defaultLikes, collegeName: defaultCollegeName, fratName: defaultFratName } = useParams()
+
+  const history = useHistory()
 
   const [party, setParty] = useState(null)
   const [frats, setFrats] = useState(null)
   const [colleges, setColleges] = useState(null)
 
-  const [ name, setName ] = useState("")
-  const [ date, setDate ] = useState("")
-  const [ info, setInfo ] = useState("")
-  const [ byob, setBYOB ] = useState(false)
-  const [ fratName, setFratName ] = useState(null)
-  const [ collegeName, setCollegeName ] = useState(null)
-  const [ likes, setLikes ] = useState(0)
+  const [ name, setName ] = useState(defaultName)
+  const [ date, setDate ] = useState(defaultDate)
+  const [ info, setInfo ] = useState(defaultInfo)
+  const [ byob, setBYOB ] = useState(defaultBYOB)
+  const [ fratName, setFratName ] = useState(defaultFratName)
+  const [ collegeName, setCollegeName ] = useState(defaultCollegeName)
+  const [ likes, setLikes ] = useState(defaultLikes)
 
   useEffect(()=>{
     getParty()
@@ -35,6 +38,7 @@ const EditPartyThroughParties = () => {
       console.log(error)
     }
   }
+
 
   const getFrats = async () => {
    try {
@@ -57,7 +61,7 @@ const EditPartyThroughParties = () => {
    }
 
    const renderFratOptions = () => {
-     console.log(party)
+     console.log("party", party)
      return frats.map( frat => {
        return(
          <option>{frat.name}</option>
@@ -96,11 +100,13 @@ const EditPartyThroughParties = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      // console.log('BYOB', byob)
       let fratID = matchFratID()
       let collegeID = matchCollegeID()
       
-      await axios.post('/api/events', {name: name, date: date, info: info, byob: byob, likes: likes, college_id: collegeID, frat_id: fratID})
-      console.log({name: name, date: date, info: info, byob: byob, likes: likes, college_id: collegeID, frat_id: fratID})
+      await axios.put(`/api/events/${id}`, {name: name, date: date, info: info, byob: byob, likes: likes, college_id: collegeID, frat_id: fratID})
+      // console.log({name: name, date: date, info: info, byob: byob, likes: likes, college_id: collegeID, frat_id: fratID})
+      history.push('/Parties')
     } catch (error) {
       console.log(error)
     }
@@ -137,7 +143,7 @@ const EditPartyThroughParties = () => {
         </Form.Group>
 
         <Form.Group controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="BYOB?" name='byob' value={byob} onChange={(e)=>setBYOB(!byob)}/>
+          <Form.Check type="checkbox" label={`BYOB is currently ${byob}`} name='byob' value={byob} onChange={(e)=>setBYOB(!byob)}/>
         </Form.Group>
 
         <Form.Group controlId="exampleForm.ControlTextarea1">
@@ -149,7 +155,9 @@ const EditPartyThroughParties = () => {
           <Col xs={12}  md={{ span: 2, offset: 0 }}>
             <Button type='submit'>Submit</Button>
           </Col>
-            <Button to='/Parties'>Cancel</Button>
+            <Link to='/Parties'>
+               <Button >Cancel</Button>
+            </Link>
         </Row>
       </Form>
 
