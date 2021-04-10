@@ -17,6 +17,7 @@ import Parties from './components/Party/Parties';
 import ProtectedRoute from './components/ProtectedRoute';
 import Frat from './components/Frats/Frat';
 import NewPartyThroughParties from './components/Party/NewPartyThroughParties';
+import CollegeShow from './components/College/CollegeShow';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           {/* <Route exact path='/componentDemo' component={ComponentDemo} /> */}
           {/* <Route exact path='/NewParty' component={NewParty} /> */}
           <Route exact path='/Colleges' component={Colleges} />
+          <Route exact path='/College/:id' component={CollegeShow} />
           <Route exact path='/Frats' component={Frats} />
           <Route exact path='/Frat/:id' component={Frat} />
           <Route exact path='/Parties' component={Parties} />
