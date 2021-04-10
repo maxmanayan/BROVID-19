@@ -70,8 +70,8 @@
 
 
  .demo {
-   background-image: url(./components/images/demo.jpg);
-   background-color: blue ;
+   background-image: url(./components/images/party.jpg);
+   background-color: rgba(0, 0, 255, 0.377) ;
    background-blend-mode: screen;
 
    background-position: center;

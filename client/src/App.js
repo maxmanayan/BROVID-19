@@ -13,7 +13,7 @@ import Colleges from './components/College/Colleges';
 import FormattedMessage from './components/FormattedMessage';
 import Frats from './components/Frats/Frats';
 import Parties from './components/Party/Parties';
-import NewParty from './components/Party/NewParty';
+import NewPartyThroughParties from './components/Party/NewPartyThroughParties';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/componentDemo' component={ComponentDemo} />
-          <Route exact path='/NewParty' component={NewParty} />
+          <Route exact path='/NewPartyThroughParties' component={NewPartyThroughParties} />
           <Route component={NoMatch} />
         </Switch>
       </Container>
