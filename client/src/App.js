@@ -13,7 +13,7 @@ import Colleges from './components/College/Colleges';
 import FormattedMessage from './components/FormattedMessage';
 import Frats from './components/Frats/Frats';
 import Parties from './components/Party/Parties';
-import NewParty from './components/Party/NewParty';
+// import NewParty from './components/Party/NewParty';
 import CollegeShow from './components/College/CollegeShow';
 import Frat from './components/Frats/Frat';
 import NewPartyThroughParties from './components/Party/NewPartyThroughParties';
