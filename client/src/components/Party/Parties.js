@@ -35,6 +35,10 @@ const Parties = () => {
             <Link to='/EditPartyThroughParties'>
               <Button variant="primary">Edit Party</Button>
             </Link>
+            
+            <div style={{marginTop: '1em'}}>
+            <Button variant='secondary'>Trash Party</Button>
+            </div>
           </Card.Body>
           <Card.Footer className="text-muted">{party.date} (at the house)</Card.Footer>
         </Card>
