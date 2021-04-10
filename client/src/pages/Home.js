@@ -53,7 +53,7 @@ const Home = () => {
           </p>
         </Jumbotron>
       }
-      {/* <Button>Primary</Button> */}
+      <Button>Primary</Button>
     </div>
   )
 }
