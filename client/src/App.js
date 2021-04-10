@@ -46,7 +46,7 @@ function App() {
           <Route exact path='/login' component={Login} />
           <Route exact path='/componentDemo' component={ComponentDemo} />
           <Route exact path='/NewPartyThroughParties' component={NewPartyThroughParties} />
-          <Route exact path='/EditPartyThroughParties' component={EditPartyThroughParties} />
+          <Route exact path='/EditPartyThroughParties/:id/:name/:date/:info/:byob/:likes/:collegeName/:collegeID/:fratName/:fratID' component={EditPartyThroughParties} />
           <Route component={NoMatch} />
         </Switch>
       </Container>
