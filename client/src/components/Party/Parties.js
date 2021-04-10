@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Parties = () => {
 
@@ -44,9 +45,12 @@ const Parties = () => {
     <Container>
       <Row>
         <Col>
-          <h3>Parties.js</h3>
+          <h1 style={{color: 'white'}}>All Parties</h1>
         </Col>
+        <Link to='NewPartyThroughParties'>
+          <Button>Post a Party Bro!</Button>
 
+        </Link>
       </Row>
       {parties && renderPartyCards()}
       {/* {parties && <pre>{JSON.stringify(parties, null, 2)}</pre>} */}

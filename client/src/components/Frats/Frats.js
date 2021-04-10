@@ -24,6 +24,15 @@ const Frats = () => {
     }
   }
 
+  // const showFrat = async () => {
+  //   try { 
+  //     let res = await axios.post('/api/frats/', {frats})
+  //     window.location.reload()
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
+
   const renderFratCards = () => {
     return frats.map( frat => {
       return(
@@ -34,13 +43,17 @@ const Frats = () => {
             <Card.Text>
             Info: {frat.fav_beer}
             </Card.Text>
+            <Link to ={`/Frat/${frat.id}`}>
             <Button variant="primary">Checkout Frat</Button>
+            </Link>
           </Card.Body>
           <Card.Footer className="text-muted">total bro's: {frat.member_count}</Card.Footer>
         </Card>
       )
     })
   }
+
+  
   return (
     <Container>
     <Row>
