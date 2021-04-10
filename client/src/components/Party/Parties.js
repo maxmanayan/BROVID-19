@@ -32,7 +32,7 @@ const Parties = () => {
             <Card.Text>
             Info: {party.info}
             </Card.Text>
-            <Link to='/EditPartyThroughParties'>
+            <Link to={`/EditPartyThroughParties/${party.id}`}>
               <Button variant="primary">Edit Party</Button>
             </Link>
             
