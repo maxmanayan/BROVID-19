@@ -9,7 +9,7 @@ class College < ApplicationRecord
       date = frat.events.find_by(college_id: self.id).date
       byob = frat.events.find_by(college_id: self.id).byob
       likes = frat.events.find_by(college_id: self.id).likes
-      {frat: frat, date: date, info: info, byob: byob, likes:likes }
+      {frat: frat, name: name, date: date, info: info, byob: byob, likes:likes }
     end
   end
 
