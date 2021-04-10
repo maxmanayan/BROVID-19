@@ -20,20 +20,20 @@ const CollegeShow = () => {
   }
 
   return(
-    // <h2>CollegeShow.js, {id}, </h2>
-    <>
-    <Container>
-      <Row>
-        <Col>
-          <h1>Party Schools Near You:</h1>
-        </Col>
+    <h2>CollegeShow.js, {id}, </h2>
+    // <>
+    // <Container>
+    //   <Row>
+    //     <Col>
+    //       <h1>Party Schools Near You:</h1>
+    //     </Col>
 
-      </Row>
-      {college && singleCollege()}
-      {/* {parties && <pre>{JSON.stringify(parties, null, 2)}</pre>} */}
+    //   </Row>
+    //   {college && singleCollege()}
+    //   {/* {parties && <pre>{JSON.stringify(parties, null, 2)}</pre>} */}
 
-    </Container>
-    </>
+    // </Container>
+    // </>
   )
 }
 export default CollegeShow;
