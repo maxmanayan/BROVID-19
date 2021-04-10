@@ -43,17 +43,24 @@ const NewPartyThroughParties = () => {
 
    const renderFratOptions = () => {
      return frats.map( frat => {
-       console.log('rendering frats', frat.name)
        return(
          <option>{frat.name}</option>
        )
      })
    }
 
+   const renderCollegeOptions = () => {
+    return colleges.map( college => {
+      return(
+        <option>{college.name}</option>
+      )
+    })
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      console.log(name, date, info, byob, likes, collegeID, fratID)
+      console.log({name: name, date: date, info: info, byob: byob, likes: likes, collegeID, fratID})
     } catch (error) {
       console.log(error)
     }
@@ -76,11 +83,7 @@ const NewPartyThroughParties = () => {
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>So Where You From Bro?</Form.Label>
           <Form.Control as="select" placeholder="So where you from bro?" name='collegeID' value={collegeID} onChange={(e)=>setCollegeID(e.target.value)}>
-            <option>University 1</option>
-            <option>University 2</option>
-            <option>University 3</option>
-            <option>University 4</option>
-            <option>University 5</option>
+              {colleges && renderCollegeOptions()}
           </Form.Control>
         </Form.Group>
 
