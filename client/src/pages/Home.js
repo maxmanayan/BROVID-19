@@ -34,7 +34,7 @@ const Home = () => {
     <div>
       {/* <h1>Home</h1> */}
       {/* {testData && testData} */}
-      <Header as='h1' textAlign='center'>Devise Auth App</Header>
+      <Header as='h1' textAlign='center'>BROVID-19</Header>
       {user && 
       
       <Card header={`Welcome ${user.name}!`}>
@@ -43,7 +43,7 @@ const Home = () => {
         <p>Email: {user.email}</p>
       </Card>
       }
-      <Button>Primary</Button>
+      {/* <Button>Primary</Button> */}
     </div>
   )
 }
