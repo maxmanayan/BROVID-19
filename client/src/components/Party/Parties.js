@@ -33,6 +33,9 @@ const Parties = () => {
             Info: {party.info}
             </Card.Text>
             <Button variant="primary">Edit Party</Button>
+            <div style={{marginTop: '1em'}}>
+            <Button variant='secondary'>Trash Party</Button>
+            </div>
           </Card.Body>
           <Card.Footer className="text-muted">{party.date} (at the house)</Card.Footer>
         </Card>
