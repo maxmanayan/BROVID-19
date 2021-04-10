@@ -111,7 +111,7 @@ const EditPartyThroughParties = () => {
       <Form onSubmit={handleSubmit} style={{color: 'white'}}>
         <Form.Group controlId="exampleForm.ControlInput1">
           <Form.Label>Party Theme</Form.Label>
-          <Form.Control type="name" placeholder="Yo is there like a theme to this throwdown?" name='name' value={name} onChange={(e)=>setName(e.target.value)}/>
+          <Form.Control defaultValue={'PARTY TIME'} type="name" placeholder="Yo is there like a theme to this throwdown?" name='name' value={name} onChange={(e)=>setName(e.target.value)}/>
         </Form.Group>
 
         <Form.Group controlId="exampleForm.ControlInput1">
