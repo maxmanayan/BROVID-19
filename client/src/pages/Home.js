@@ -43,7 +43,7 @@ const Home = () => {
         <p>Email: {user.email}</p>
       </Card>
       }
-      <Button>Primary</Button>
+      {/* <Button>Primary</Button> */}
     </div>
   )
 }
