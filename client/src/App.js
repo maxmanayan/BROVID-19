@@ -14,6 +14,7 @@ import FormattedMessage from './components/FormattedMessage';
 import Frats from './components/Frats/Frats';
 import Parties from './components/Party/Parties';
 import NewParty from './components/Party/NewParty';
+import Frat from './components/Frats/Frat';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path='/about' component={About} />
           <Route exact path='/Colleges' component={Colleges} />
           <Route exact path='/Frats' component={Frats} />
+          <Route exact path='/Frat/:id' component={Frat} />
           <Route exact path='/Parties' component={Parties} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
