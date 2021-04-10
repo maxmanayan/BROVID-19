@@ -7,10 +7,10 @@ const Login = () => {
   const {handleLogin} = useContext(AuthContext)
   const history = useHistory()
   const [account, setAccount] = useState({
-    name: 'Test',
-    email: 'test1@test.com',
-    password: '123456',
-    passwordConfirmation: '123456'
+    name: '',
+    email: '',
+    password: '',
+    passwordConfirmation: ''
   })
 
 
