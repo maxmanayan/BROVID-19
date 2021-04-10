@@ -27,7 +27,7 @@ const CollegeShow = () => {
     }
   }
 
-  
+
   // const deleteParty = async ( id) => {
   //   try {
   //     console.log(id)
@@ -37,6 +37,7 @@ const CollegeShow = () => {
   //     console.log(err)
   //   }
   // }
+  
 
 
   const renderParties = () => {
@@ -49,7 +50,7 @@ const CollegeShow = () => {
             <Card.Text>
             Info: {party.info}
             </Card.Text>
-            <Button variant="primary">Edit Party</Button>
+            {/* <Button variant="primary">Edit Party</Button> */}
             {/* <Button onClick={() => deleteParty(party.id)}variant='secondary'>Trash Party</Button> */}
           </Card.Body>
           <Card.Footer className="text-muted">{party.date} (9 P.M. at the house)</Card.Footer>
