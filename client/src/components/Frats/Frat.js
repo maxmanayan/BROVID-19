@@ -48,9 +48,9 @@ const Frat = () => {
 //       console.log(error)
 //     }
 //   }
-const deleteParty = async (id) => {
+const deleteParty = async ( id) => {
   try {
-    let res = await axios.delete(`/api/events/frat/${id}`)
+    let res = await axios.delete(`/api/events/${id}`)
     window.location.reload()
   } catch (err) {
     console.log(err)
@@ -92,8 +92,9 @@ const deleteParty = async (id) => {
             <h3>Money Bro</h3>
           </Col>
       </Container> 
-      <h1>{frat.name}</h1>
-      <span>Bro count:{frat.member_count}</span>
+      <h1 style={{fontSize: '150px',fontFamily:'cursive' , color: 'white', textAlign: 'center'}}>{frat.name}</h1>
+      <span style={{fontSize: '25px', color: 'white'}}>Bro count:{frat.member_count}</span>
+      <p style={{fontSize: '20px', color: 'white'}}>If BYOB, try to bring {frat.fav_beer}.</p>
       {frat && renderParties()}
     </div>
   )

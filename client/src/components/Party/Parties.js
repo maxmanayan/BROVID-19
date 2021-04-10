@@ -24,7 +24,7 @@ const Parties = () => {
 
   const deleteParty = async (id) => {
     try {
-      let res = await axios.delete(`/api/events/${id}`)
+      let res = await axios.delete(`/api/events`, {data: {id: id}})
       window.location.reload()
     } catch (err) {
       console.log(err)
