@@ -37,17 +37,17 @@ const Frats = () => {
     return frats.map( frat => {
       return(
         <Card className="text-center" style={{marginTop: '2em'}}>
-          <Card.Header>{frat.name}</Card.Header>
+          <Card.Header>Fraternity</Card.Header>
           <Card.Body>
-            <Card.Title>Theme: {frat.name}</Card.Title>
+            <Card.Title>{frat.name}</Card.Title>
             <Card.Text>
-            Info: {frat.fav_beer}
+            Favorite Beer🍻  {frat.fav_beer}🍻
             </Card.Text>
             <Link to ={`/Frat/${frat.id}`}>
             <Button variant="primary">Checkout Frat</Button>
             </Link>
           </Card.Body>
-          <Card.Footer className="text-muted">total bro's: {frat.member_count}</Card.Footer>
+          <Card.Footer className="text-muted">Bro Count: {frat.member_count}</Card.Footer>
         </Card>
       )
     })
@@ -57,8 +57,8 @@ const Frats = () => {
   return (
     <Container>
     <Row>
-      <Col>
-        <h3>Money Bro</h3>
+      <Col xs={12}  md={{ span: 6, offset: 4 }}>
+        <h1 style={{color: 'white'}}>BROVID FRATERNITIES</h1>
       </Col>
 
     </Row>
