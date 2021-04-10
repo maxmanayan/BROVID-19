@@ -27,6 +27,13 @@ const CollegeShow = () => {
     }
   }
 
+  const deleteParty = async (id) => {
+    let res = await axios.delete(`api/events/${id}`)
+    const remainingParties = parties.filter(x => x.id !=id)
+    setParties(remainingParties)
+  }  
+
+
   const renderParties = () => {
     return frats.map( party => {
       return(
@@ -38,6 +45,7 @@ const CollegeShow = () => {
             Info: {party.info}
             </Card.Text>
             <Button variant="primary">Edit Party</Button>
+            <Button onClick={() => deleteParty(party.id)}variant='secondary'>Trash Party</Button>
           </Card.Body>
           <Card.Footer className="text-muted">{party.date} (9 P.M. at the house)</Card.Footer>
         </Card>
@@ -64,3 +72,4 @@ const CollegeShow = () => {
   )
 }
 export default CollegeShow;
+

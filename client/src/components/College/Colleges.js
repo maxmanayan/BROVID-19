@@ -20,6 +20,8 @@ const Colleges = () => {
     }
     
   }
+
+  
   const renderColleges = () => {
     return colleges.map( c => {
       return(
@@ -44,7 +46,7 @@ const Colleges = () => {
     <Container>
       <Row>
         <Col>
-          <h1 style={{textAlign:'center'}}>Party Schools Near You:</h1>
+          <h1 style={{textAlign:'center',color:'white'}}>Party Schools Near You:</h1>
         </Col>
 
       </Row>
