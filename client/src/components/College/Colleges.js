@@ -1,6 +1,7 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 import { Button, Card, Col, Container, Row } from 'react-bootstrap'
+import CollegeShow from './CollegeShow'
 
 const Colleges = () => {
   const [colleges, setColleges] = useState([])
@@ -22,14 +23,14 @@ const Colleges = () => {
   const renderColleges = () => {
     return colleges.map( c => {
       return(
-        <Card className="text-center">
-          <Card.Header>{c.name}</Card.Header>
+        <Card className="text-center" style={{marginTop: '2em'}}>
+          <Card.Header>College:</Card.Header>
           <Card.Body>
-            <Card.Title>College: {c.name}</Card.Title>
-            {/* <Card.Text>
-              Info: {c.party.info}
+            <Card.Title> {c.name}</Card.Title>
+            <Card.Text>
+              Mascot: {c.mascot}
             </Card.Text>
-            <Button>Edit College</Button> */}
+            <Button href={`/College/${c.id}`} >See Parties</Button>
           </Card.Body>
           {/* <Card.Footer className="text-muted">{c.party.date} (at the house)</Card.Footer> */}
         </Card>
@@ -43,7 +44,7 @@ const Colleges = () => {
     <Container>
       <Row>
         <Col>
-          <h3>Colleges.js</h3>
+          <h1>Party Schools Near You:</h1>
         </Col>
 
       </Row>
