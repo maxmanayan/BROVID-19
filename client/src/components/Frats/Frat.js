@@ -98,9 +98,9 @@ const deleteParty = async ( id) => {
             <h3>Money Bro</h3>
           </Col>
       </Container> 
-      <h1 style={{fontSize: '150px',fontFamily:'cursive' , color: 'white', textAlign: 'center'}}>{frat.name}</h1>
-      <span style={{fontSize: '25px', color: 'white'}}>Bro count:{frat.member_count}</span>
-      <p style={{fontSize: '20px', color: 'white'}}>If BYOB, try to bring {frat.fav_beer}.</p>
+      <h1 style={{fontSize: '150px',fontFamily:'Copperplate' , color: 'white', textAlign: 'center'}}>{frat.name}</h1>
+      <span style={{fontSize: '25px',fontFamily:'Copperplate' , color: 'white'}}>Bro count:{frat.member_count}</span>
+      <p style={{fontSize: '20px',fontFamily:'Copperplate' , color: 'white'}}>If BYOB, try to bring {frat.fav_beer}.</p>
       {frat && renderParties()}
     </div>
   )
