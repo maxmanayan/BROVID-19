@@ -30,7 +30,7 @@ const CollegeShow = () => {
     return frats.map( party => {
       return(
         <Card className="text-center" style={{marginTop: '2em'}}>
-          <Card.Header>Party hosted by {party.frat.name}</Card.Header>
+          <Card.Header>Party hosted by the {party.frat.name} fraternity</Card.Header>
           <Card.Body>
             <Card.Title>Theme: {party.name}</Card.Title>
             <Card.Text>
@@ -38,7 +38,7 @@ const CollegeShow = () => {
             </Card.Text>
             <Button variant="primary">Edit Party</Button>
           </Card.Body>
-          <Card.Footer className="text-muted">{party.date} (at the house)</Card.Footer>
+          <Card.Footer className="text-muted">{party.date} (9 P.M. at the house)</Card.Footer>
         </Card>
       )
     })
@@ -48,16 +48,14 @@ const CollegeShow = () => {
     // <h2>CollegeShow.js, {id}, </h2>
     <Container>
     <Card className="text-center" style={{marginTop: '2em'}}>
-          <Card.Header>College:</Card.Header>
+          <Card.Header style={{fontSize:'25px'}}>Frat Parties At:</Card.Header>
           <Card.Body>
             <Card.Title>{college.name}</Card.Title>
             <Card.Text>
               Mascot: {college.mascot}
             </Card.Text>
-            <Card.Text>
-              Frats: 
-            </Card.Text>
-            <Button>See Parties</Button>
+            
+            <Button href='/Parties'>Go To All Parties</Button>
           </Card.Body>
           {/* <Card.Footer className="text-muted">{c.party.date} (at the house)</Card.Footer> */}
         </Card>
