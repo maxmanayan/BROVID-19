@@ -17,7 +17,7 @@ import Parties from './components/Party/Parties';
 import ProtectedRoute from './components/ProtectedRoute';
 import Frat from './components/Frats/Frat';
 import NewPartyThroughParties from './components/Party/NewPartyThroughParties';
-import EditPartyThroughParties from './components/Party/EditPartyThroughParties';
+// import EditPartyThroughParties from './components/Party/EditPartyThroughParties';
 import CollegeShow from './components/College/CollegeShow';
 import EditPartyThroughParties from './components/Party/EditPartyThroughParties';
 
