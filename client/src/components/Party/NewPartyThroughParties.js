@@ -12,8 +12,8 @@ const NewPartyThroughParties = () => {
   const [ date, setDate ] = useState("")
   const [ info, setInfo ] = useState("")
   const [ byob, setBYOB ] = useState(false)
-  const [ fratID, setFratID ] = useState(null)
-  const [ collegeID, setCollegeID ] = useState(null)
+  const [ fratName, setFratName ] = useState(null)
+  const [ collegeName, setCollegeName ] = useState(null)
   const [ likes, setLikes ] = useState(0)
 
   useEffect(()=>{
@@ -57,10 +57,34 @@ const NewPartyThroughParties = () => {
     })
   }
 
+  const matchFratID = () => {
+    let fratID = null
+    frats.map(frat => {
+      if(fratName === frat.name){
+        fratID = frat.id
+      }
+    })
+    return fratID
+  }
+  
+  const matchCollegeID = () => {
+    let collegeID = null
+    colleges.map(college => {
+      if(collegeName === college.name){
+        collegeID = college.id
+      }
+    })
+    return collegeID
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      console.log({name: name, date: date, info: info, byob: byob, likes: likes, collegeID, fratID})
+      let fratID = matchFratID()
+      let collegeID = matchCollegeID()
+      
+      await axios.post('/api/events', {name: name, date: date, info: info, byob: byob, likes: likes, college_id: collegeID, frat_id: fratID})
+      console.log({name: name, date: date, info: info, byob: byob, likes: likes, college_id: collegeID, frat_id: fratID})
     } catch (error) {
       console.log(error)
     }
@@ -82,14 +106,14 @@ const NewPartyThroughParties = () => {
 
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>So Where You From Bro?</Form.Label>
-          <Form.Control as="select" placeholder="So where you from bro?" name='collegeID' value={collegeID} onChange={(e)=>setCollegeID(e.target.value)}>
+          <Form.Control as="select" placeholder="So where you from bro?" name='collegeID' value={collegeName} onChange={(e)=>setCollegeName(e.target.value)}>
               {colleges && renderCollegeOptions()}
           </Form.Control>
         </Form.Group>
 
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>Who do you know here?</Form.Label>
-          <Form.Control as="select" placeholder="So where you from bro?" name='fratID' value={fratID} onChange={(e)=>setFratID(e.target.value)}>
+          <Form.Control as="select" placeholder="So where you from bro?" name='fratID' value={fratName} onChange={(e)=>setFratName(e.target.value)}>
             {/* <option>Frat 1</option> */}
             {/* <Dropdown.Item eventKey="option-1">option-1</Dropdown.Item> */}
            {frats && renderFratOptions()}
