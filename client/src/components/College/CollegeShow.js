@@ -30,7 +30,7 @@ const CollegeShow = () => {
   const renderParties = () => {
     return frats.map( party => {
       return(
-        <Card className="text-center" style={{marginTop: '2em'}}>
+        <Card className="text-center" style={{marginTop: '2em'}} bg='dark' text='white'>
           <Card.Header>Party hosted by the {party.frat.name} fraternity</Card.Header>
           <Card.Body>
             <Card.Title>Theme: {party.name}</Card.Title>

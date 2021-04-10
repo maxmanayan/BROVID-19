@@ -23,7 +23,7 @@ const Colleges = () => {
   const renderColleges = () => {
     return colleges.map( c => {
       return(
-        <Card className="text-center" style={{marginTop: '2em'}}>
+        <Card className="text-center" style={{marginTop: '2em'}} bg='dark' text='white'>
           <Card.Header>College:</Card.Header>
           <Card.Body>
             <Card.Title> {c.name}</Card.Title>

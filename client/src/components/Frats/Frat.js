@@ -66,7 +66,7 @@ const deleteParty = async ( id) => {
     return parties.map( party => {
       
       return(
-        <Card className="text-center" style={{marginTop: '2em'}}>
+        <Card className="text-center" style={{marginTop: '2em'}} bg='dark' text='white'>
           <Card.Header>School: {party.college.name}</Card.Header>
           <Card.Body>
             <Card.Title>Theme: {party.name}</Card.Title>
