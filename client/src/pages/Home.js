@@ -42,7 +42,7 @@ const Home = () => {
       //   <p>Name: {user.name}</p>
       //   <p>Email: {user.email}</p>
       // </Card>
-        <Jumbotron>
+        <Jumbotron className="text-center">
           <h1>Introducing the new nationwide pandemic of BROVID-19, Bros!</h1>
           <br/>
             <p>
