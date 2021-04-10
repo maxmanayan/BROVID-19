@@ -50,7 +50,8 @@ const Frat = () => {
 //   }
 const deleteParty = async (id) => {
   try {
-    let res = await axios.delete(`/api/events/frat/${id}`)
+    console.log(id)
+    let res = await axios.delete(`/api/events/${id}`)
     window.location.reload()
   } catch (err) {
     console.log(err)
@@ -78,9 +79,8 @@ const deleteParty = async (id) => {
             <Link to={{pathname:`/EditPartyThroughParties/${party.id}/${party.name}/${party.date}/${party.info}/${party.byob}/${party.likes}/${party.college.name}/${party.college.id}/${frat.name}/${frat.id}/`}}>
               <Button variant="primary">Edit Party</Button>
             </Link>
-            <Button variant="primary">Edit Party</Button>
             <div style={{marginTop: '1em'}}>
-            <Button onClick={() => deleteParty(party.id)}variant='secondary'>Trash Party</Button>
+            <Button onClick={() => deleteParty(party.party_id)}variant='secondary'>Trash Party</Button>
             </div>
           </Card.Body>
           <Card.Footer className="text-muted">{party.date} (at the house)</Card.Footer>
