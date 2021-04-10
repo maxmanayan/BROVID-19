@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import {Button, Col, Dropdown, Form, Row} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 
 const NewPartyThroughParties = () => {
@@ -133,7 +134,9 @@ const NewPartyThroughParties = () => {
           <Col xs={12}  md={{ span: 2, offset: 0 }}>
             <Button type='submit'>Submit</Button>
           </Col>
-            <Button to='/Parties'>Cancel</Button>
+          <Link to='/Parties'>
+              <Button >Cancel</Button>
+          </Link>
         </Row>
       </Form>
 

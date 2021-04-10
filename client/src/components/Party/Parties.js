@@ -31,6 +31,7 @@ const Parties = () => {
     }
   }
   const renderPartyCards = () => {
+    console.log(parties)
     return parties.map( party => {
       return(
         <Card className="text-center" style={{marginTop: '2em'}}>
@@ -40,7 +41,10 @@ const Parties = () => {
             <Card.Text>
             Info: {party.info}
             </Card.Text>
-            <Link to='/EditPartyThroughParties'>
+            <Card.Text>
+              {party.byob === true ? "BYOB" : ""}
+            </Card.Text>
+            <Link to={{pathname:`/EditPartyThroughParties/${party.id}/${party.name}/${party.date}/${party.info}/${party.byob}/${party.likes}/${party.college.name}/${party.college.id}/${party.frat.name}/${party.frat.id}/`}}>
               <Button variant="primary">Edit Party</Button>
             </Link>
             
