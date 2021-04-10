@@ -7,7 +7,6 @@ import { useParams } from "react-router";
 const CollegeShow = () => {
   const {id} = useParams()  
   const [college, setCollege] = useState([])
-  const [frat, setFrat] = useState([])
 
   useEffect(()=>{
     singleCollege()
