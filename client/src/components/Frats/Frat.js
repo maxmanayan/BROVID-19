@@ -50,7 +50,7 @@ const Frat = () => {
 //   }
 const deleteParty = async (id) => {
   try {
-    let res = await axios.delete(`/api/events/${id}`)
+    let res = await axios.delete(`/api/events/frat/${id}`)
     window.location.reload()
   } catch (err) {
     console.log(err)
