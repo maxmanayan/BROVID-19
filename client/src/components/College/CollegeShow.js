@@ -27,11 +27,16 @@ const CollegeShow = () => {
     }
   }
 
-  const deleteParty = async (id) => {
-    let res = await axios.delete(`api/events/${id}`)
-    const remainingParties = parties.filter(x => x.id !=id)
-    setParties(remainingParties)
-  }  
+  
+  // const deleteParty = async ( id) => {
+  //   try {
+  //     console.log(id)
+  //     let res = await axios.delete(`/api/events/${id}`)
+  //     window.location.reload()
+  //   } catch (err) {
+  //     console.log(err)
+  //   }
+  // }
 
 
   const renderParties = () => {
