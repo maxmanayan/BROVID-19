@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import {Button, Col, Form, Row} from 'react-bootstrap'
+import {Button, Col, Dropdown, Form, Row} from 'react-bootstrap'
 
 
 const NewPartyThroughParties = () => {
@@ -25,6 +25,7 @@ const NewPartyThroughParties = () => {
    try {
      let res = await axios.get('/api/frats')
      console.log('frats', res.data)
+     setFrats(res.data)
    } catch (error) {
      console.log(error)
    } 
@@ -34,6 +35,7 @@ const NewPartyThroughParties = () => {
     try {
       let res = await axios.get('/api/colleges')
       console.log('colleges', res.data)
+      setColleges(res.data)
     } catch (error) {
       console.log(error)
     } 
@@ -43,7 +45,7 @@ const NewPartyThroughParties = () => {
      return frats.map( frat => {
        console.log('rendering frats', frat.name)
        return(
-         <option>{frat.name} {frat.id}</option>
+         <option>{frat.name}</option>
        )
      })
    }
@@ -86,7 +88,8 @@ const NewPartyThroughParties = () => {
           <Form.Label>Who do you know here?</Form.Label>
           <Form.Control as="select" placeholder="So where you from bro?" name='fratID' value={fratID} onChange={(e)=>setFratID(e.target.value)}>
             {/* <option>Frat 1</option> */}
-           {/* {renderFratOptions()} */}
+            {/* <Dropdown.Item eventKey="option-1">option-1</Dropdown.Item> */}
+           {frats && renderFratOptions()}
           </Form.Control>
         </Form.Group>
 
@@ -106,6 +109,8 @@ const NewPartyThroughParties = () => {
             <Button to='/Parties'>Cancel</Button>
         </Row>
       </Form>
+
+      {/* {frats && <pre>{JSON.stringify(frats, null, 2)}</pre>} */}
     </div>
   )
 }
