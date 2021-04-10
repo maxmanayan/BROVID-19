@@ -30,7 +30,7 @@ const Colleges = () => {
             <Card.Text>
               Mascot: {c.mascot}
             </Card.Text>
-            <Button href={`/College/${c.id}`} >See Parties</Button>
+            <Button href={`/College/${c.id}`} >Show This Party School</Button>
           </Card.Body>
           {/* <Card.Footer className="text-muted">{c.party.date} (at the house)</Card.Footer> */}
         </Card>
