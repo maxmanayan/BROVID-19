@@ -44,7 +44,7 @@ const Colleges = () => {
     <Container>
       <Row>
         <Col>
-          <h1>Party Schools Near You:</h1>
+          <h1 style={{textAlign:'center'}}>Party Schools Near You:</h1>
         </Col>
 
       </Row>

@@ -67,7 +67,6 @@ const Parties = () => {
         </Col>
         <Link to='NewPartyThroughParties'>
           <Button>Post a Party Bro!</Button>
-
         </Link>
       </Row>
       {parties && renderPartyCards()}

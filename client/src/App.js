@@ -17,9 +17,9 @@ import Parties from './components/Party/Parties';
 import ProtectedRoute from './components/ProtectedRoute';
 import Frat from './components/Frats/Frat';
 import NewPartyThroughParties from './components/Party/NewPartyThroughParties';
-// import EditPartyThroughParties from './components/Party/EditPartyThroughParties';
-import CollegeShow from './components/College/CollegeShow';
 import EditPartyThroughParties from './components/Party/EditPartyThroughParties';
+import CollegeShow from './components/College/CollegeShow';
+
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
       <FetchUser>
       <Container>
         <Switch>
-          <Route exact path='/' component={Home} />
+          <ProtectedRoute exact path='/' component={Home} />
           <ProtectedRoute exact path='/Colleges' component={Colleges} />
           <ProtectedRoute exact path='/Frats' component={Frats} />
           <ProtectedRoute exact path='/Parties' component={Parties} />
