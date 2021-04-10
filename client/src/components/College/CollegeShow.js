@@ -53,7 +53,7 @@ const CollegeShow = () => {
           </Col>
       </Row>
       <Button href='/Parties'>Go To All Parties Page</Button>
-        <Link to='NewPartyThroughParties'>
+        <Link to='../NewPartyThroughParties'>
           <Button style={{float:'right'}}>Post a Party Bro!</Button>
         </Link>
             {/* </Card.Body> */}
