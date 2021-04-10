@@ -38,7 +38,7 @@ const NavBar = (props) => {
   }
 
   return(
-    <Menu>
+    <Menu inverted>
       <Link to='/'>
         <Menu.Item active={pathname == '/'}>
           Home
