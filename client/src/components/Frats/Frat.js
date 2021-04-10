@@ -66,7 +66,7 @@ const deleteParty = async (id) => {
     return parties.map( party => {
       
       return(
-        <Card className="text-center" style={{marginTop: '2em'}}>
+        <Card className="text-center" style={{marginTop: '2em'}} bg='dark' text='white'>
           <Card.Header>School: {party.college.name}</Card.Header>
           <Card.Body>
             <Card.Title>Theme: {party.name}</Card.Title>
@@ -98,8 +98,9 @@ const deleteParty = async (id) => {
             <h3>Money Bro</h3>
           </Col>
       </Container> 
-      <h1>{frat.name}</h1>
-      <span>Bro count:{frat.member_count}</span>
+      <h1 style={{fontSize: '150px',fontFamily:'Copperplate' , color: 'white', textAlign: 'center'}}>{frat.name}</h1>
+      <span style={{fontSize: '25px',fontFamily:'Copperplate' , color: 'white'}}>Bro count:{frat.member_count}</span>
+      <p style={{fontSize: '20px',fontFamily:'Copperplate' , color: 'white'}}>If BYOB, try to bring {frat.fav_beer}.</p>
       {frat && renderParties()}
     </div>
   )

@@ -34,7 +34,7 @@ const Parties = () => {
     console.log(parties)
     return parties.map( party => {
       return(
-        <Card className="text-center" style={{marginTop: '2em'}}>
+        <Card className="text-center" style={{marginTop: '2em'}} bg='dark' text='white'>
           <Card.Header>Party hosted by {party.frat.name}</Card.Header>
           <Card.Body>
             <Card.Title>Theme: {party.name}</Card.Title>

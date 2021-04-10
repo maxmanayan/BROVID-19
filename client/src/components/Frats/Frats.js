@@ -36,7 +36,7 @@ const Frats = () => {
   const renderFratCards = () => {
     return frats.map( frat => {
       return(
-        <Card className="text-center" style={{marginTop: '2em'}}>
+        <Card className="text-center" style={{marginTop: '2em'}} bg='dark' text='white'>
           <Card.Header>Fraternity</Card.Header>
           <Card.Body>
             <Card.Title>{frat.name}</Card.Title>
