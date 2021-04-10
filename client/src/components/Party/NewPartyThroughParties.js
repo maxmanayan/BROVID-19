@@ -63,6 +63,7 @@ const NewPartyThroughParties = () => {
     frats.map(frat => {
       if(fratName === frat.name){
         fratID = frat.id
+        console.log('fratID inside ', fratID)
       }
     })
     return fratID
@@ -70,22 +71,27 @@ const NewPartyThroughParties = () => {
   
   const matchCollegeID = () => {
     let collegeID = null
+    console.log('colleges', colleges)
     colleges.map(college => {
       if(collegeName === college.name){
         collegeID = college.id
+        console.log('collegeID inside', collegeID)
       }
     })
+    console.log("collegeID", collegeID)
     return collegeID
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
+      console.log(fratName)
+      console.log(collegeName)
       let fratID = matchFratID()
       let collegeID = matchCollegeID()
+      console.log({name: name, date: date, info: info, byob: byob, likes: likes, college_id: collegeID, frat_id: fratID})
       
       await axios.post('/api/events', {name: name, date: date, info: info, byob: byob, likes: likes, college_id: collegeID, frat_id: fratID})
-      console.log({name: name, date: date, info: info, byob: byob, likes: likes, college_id: collegeID, frat_id: fratID})
     } catch (error) {
       console.log(error)
     }

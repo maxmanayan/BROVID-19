@@ -4,12 +4,13 @@ class Frat < ApplicationRecord
 
   def get_colleges_with_event_info
     self.colleges.map do |college|
+      party_id = college.events.find_by(frat_id: self.id).id
       name = college.events.find_by(frat_id: self.id).name
       info = college.events.find_by(frat_id: self.id).info
       date = college.events.find_by(frat_id: self.id).date
       byob = college.events.find_by(frat_id: self.id).byob
       likes = college.events.find_by(frat_id: self.id).likes
-      {college: college, name: name, date: date, info: info, byob: byob, likes:likes }
+      {college: college, party_id: party_id, name: name, date: date, info: info, byob: byob, likes:likes }
     end
   end
 

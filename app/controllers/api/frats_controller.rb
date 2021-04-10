@@ -7,7 +7,7 @@ class Api::FratsController < ApplicationController
   end
 
   def show
-    render json: {frat: @frat, colleges: @frat.get_colleges_with_event_info, unassociated_colleges: @frat.get_unassociated_colleges}
+    render json: {frat: @frat, colleges: @frat.get_colleges_with_event_info, events: @frat.events, unassociated_colleges: @frat.get_unassociated_colleges}
   end
 
   def create
