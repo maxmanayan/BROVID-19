@@ -19,7 +19,7 @@ import Frat from './components/Frats/Frat';
 import NewPartyThroughParties from './components/Party/NewPartyThroughParties';
 import EditPartyThroughParties from './components/Party/EditPartyThroughParties';
 import CollegeShow from './components/College/CollegeShow';
-import EditPartyThroughParties from './components/Party/EditPartyThroughParties';
+
 
 function App() {
   return (

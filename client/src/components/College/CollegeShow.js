@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router";
+import { Link } from 'react-router-dom'
 
 
 const CollegeShow = () => {
@@ -46,19 +47,19 @@ const CollegeShow = () => {
 
   return(
     <Container>
-    <Row>
-        <Col>
-          <h1 style={{textAlign:'center'}}>{college.name}</h1>
-        </Col>
-    </Row>
-    <Button href='/Parties'>Go To All Parties Page</Button>
-      <Link to='NewPartyThroughParties'>
-        <Button>Post a Party Bro!</Button>
-      </Link>
-          {/* </Card.Body> */}
-          {/* <Card.Footer className="text-muted">{c.party.date} (at the house)</Card.Footer> */}
-        {/* </Card> */}
-        {frats && renderParties()}
+      <Row>
+          <Col>
+            <h1 style={{textAlign:'center'}}>{college.name}</h1>
+          </Col>
+      </Row>
+      <Button href='/Parties'>Go To All Parties Page</Button>
+        <Link to='NewPartyThroughParties'>
+          <Button style={{float:'right'}}>Post a Party Bro!</Button>
+        </Link>
+            {/* </Card.Body> */}
+            {/* <Card.Footer className="text-muted">{c.party.date} (at the house)</Card.Footer> */}
+          {/* </Card> */}
+          {frats && renderParties()}
     </Container>
   )
 }
